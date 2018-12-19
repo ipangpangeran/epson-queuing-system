@@ -8,7 +8,7 @@ switch($_GET[act]){
   default:    ?>
 <div class="row-fluid sortable">		
 				<div class="box span12">
-					<div class="box-header well" data-original-title>
+					<div class="box-header" data-original-title>
 						<div class="box-icon">
 							<a href="?link=pengguna-akun&act=Add" class="btn btn-round" title="Tambah Pengguna" data-rel="tooltip"><i class="icon-plus"></i></a>
 							
@@ -18,6 +18,7 @@ switch($_GET[act]){
 						<table id="akun" class="table table-striped table-bordered bootstrap-datatable">
 						  <thead>
 							  <tr>
+                                                                    <th>No</th>
                                                                     <th>ID</th>
                                                                     <th>Username</th>
                                                                     <th>Nama Lengkap</th>
@@ -57,17 +58,17 @@ switch($_GET[act]){
 	$('#akun').dataTable({
 			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span12'i><'span12 center'p>>",
 			"sPaginationType": "bootstrap",
-                        "sAjaxSource": 'modul/daftar_akun/json.php',
+            "sAjaxSource": 'modul/daftar_akun/json.php',
 			"oLanguage": {
-			"sLengthMenu": "_MENU_ records per page"
+			"sLengthMenu": "_MENU_ Records per page"
 			},
                         aoColumnDefs: [{
-                                "aTargets": [0]
+                        "aTargets": [0]
                         }, {
                         "aTargets": [2]
                                 
                         }, {
-                                "aTargets": [3],
+                                "aTargets": [4],
                                 
                                 "sName": "RoleId",
                                 "sDefaultContent": "",
@@ -77,7 +78,7 @@ switch($_GET[act]){
                         {
                             // oObj.aData[0] returns the RoleId
                             
-                            return " <a class='btn btn-success' href='?link=pengguna-akun&act=Detail&id="+oObj.aData[0]+"'><i class='icon-zoom-in icon-white'></i> Detail</a> ";
+                            return " <a class='btn btn-success' href='?link=pengguna-akun&act=Detail&id="+oObj.aData[1]+"'><i class='icon-zoom-in icon-white'></i> Detail</a> ";
                             
                         }
                         

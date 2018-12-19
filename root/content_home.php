@@ -14,5 +14,8 @@ if ($_GET['link']=='loginAdmin'){
  include "element/loginAdmin.php"; 
 } // Apabila modul tidak ditemukan
 
+if ($_GET['link']=='loginUser'){
+ include "element/loginUser.php"; 
+} // Apabila modul tidak ditemukan
 
 ?>

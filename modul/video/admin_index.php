@@ -1,46 +1,45 @@
 <?php
+session_start();
  if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
   echo header("location:home.php?link=home");
 }
 else{
-
 switch($_GET[act]){
   default: ?>
 <section>
-                    <div class="row-fluid">
-                        <div class="span12">
-                            
-                            <div class="widget widget-simple widget-table">
-                                <table id="table" class="table table-striped table-content table-condensed boo-table table-hover">
-                                    <thead>
-                                       
-                                        <tr>
-                                            <th class="no_mobile" scope="col">ID <span class="column-sorter"></span></th>
-                                            <th class="no_mobile" scope="col">Nama Video <span class="column-sorter"></span></th>
-                                            <th class="alignright">Actions</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                                 
-                                
-          <!-- INPUT elements of the form -->
-
-      
-     
-                                <!-- // DATATABLE - DTSC -->
-                                
-                            </div>
-                            <!-- // Widget -->
-                             
-                        </div>
-                        <!-- // Column -->
-                        
-                    </div>
-                    <!-- // Example row -->
-                    
-                    
-                </section>
-                <hr>
+<div class="row-fluid">
+  <div class="span12">
+   <div class="navbar">
+    <div class="navbar-inner">
+     <div class="fileupload-buttonbar">
+      <h4 class="title"><i class="fontello-icon-video"></i>Upload Video</h4>
+<!-- The fileinput-button span is used to style the file input field as button -->
+        <ul class="btn-toolbar pull-right">
+        <li><a href="?link=video&act=Add" class="btn btn-blue "> <i class="fontello-icon-plus-1"></i> 
+        <span>Tambah</span>
+        </a></li>
+        </ul>
+     </div>
+<!-- // Fileupload-buttonbar --> 
+    </div>
+   </div>
+    <div class="widget widget-simple widget-table">
+        <table id="table" class="table table-striped table-content table-condensed boo-table table-hover">
+        <thead>
+        <tr>
+        <th class="no_mobile" scope="col">No <span class="column-sorter"></span></th>
+        <th class="no_mobile" scope="col">ID <span class="column-sorter"></span></th>
+        <th class="no_mobile" scope="col">Nama Video <span class="column-sorter"></span></th>
+        
+        <th class="alignright">Actions</th>
+        </tr>
+        </thead>
+        </table>
+    </div>
+  </div>
+</div>
+</section>
+<hr>
             
 <?php   break; ?>
   
@@ -48,13 +47,6 @@ switch($_GET[act]){
         case "Add": 
         include "admin_add.php"; 
         break;  
-
-  
-      // Form Edit 
-        case "Edit": 
-        include "admin_edit.php"; 
-        break;  
-        
         // Form Detail 
         case "Detail": 
         include "admin_detail.php"; 
@@ -66,8 +58,8 @@ switch($_GET[act]){
     $(document)
         .ready(function () {
      // DATATABLE
-				// -------------------------------------------------------------------------------- * -->
-        		$('#table')
+                // -------------------------------------------------------------------------------- * -->
+                $('#table')
                         
                         .dataTable({
                         sScrollY: "374px",
@@ -91,7 +83,7 @@ switch($_GET[act]){
                                 'sClass': 'hidden-phone'
                         
                         }, {
-                                "aTargets": [2],
+                                "aTargets": [3],
                                 
                                 "sName": "RoleId",
                                 "sDefaultContent": "",
@@ -101,7 +93,7 @@ switch($_GET[act]){
                         {
                             // oObj.aData[0] returns the RoleId
                             
-                            return "<a  class='btn btn-yellow' href='?link=video&act=Edit&id="+oObj.aData[0]+"'>Edit</a>";
+                            return "<a  class='btn btn-yellow' href='?link=video&act=Detail&id="+oObj.aData[1]+"'>Edit</a>";
                             
                         }
                         

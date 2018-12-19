@@ -2,14 +2,17 @@
 <html class="no-js" lang="en">
 
 <!-- Mirrored from disnakkeswan.sulselprov.go.id/login by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 15 May 2014 02:19:08 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>.:: Aplikasi Antrian Bank ini ::.</title>
+    <title>.:: Dispenser Tiket Antrian EPSON ::.</title>
     <meta name="description" content="Aplikasi Antrian">
-    <meta name="author" content="M.Mattawang.S.Kom">
-    <meta name="keywords" content="programmer jalanan">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="author" content="Ipang">
+    <meta name="keywords" content="Newbie Programmer">
+    
+    <link rel="shortcut icon" href="img/epson.png">
+
     <link rel="stylesheet" href="loginStyle/css/login.css"/>
     <script src="front/js/modernizr.min.js"></script>
 </head>
@@ -39,7 +42,7 @@
     </div>
 </div>
 <footer class="container">
-    <p id="footer-text"><small>APLIKASI ANTRIAN BANK INI<br>
+    <p id="footer-text"><small>APLIKASI ANTRIAN EPSON<br>
 </small></p>
 </footer>
 <script src="loginStyle/js/login.js"></script>
@@ -48,6 +51,7 @@
         $(document).foundation();
     });
 </script>
+
 </body>
 
 <!-- Mirrored from disnakkeswan.sulselprov.go.id/login by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 15 May 2014 02:19:28 GMT -->

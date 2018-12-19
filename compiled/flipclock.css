@@ -48,7 +48,7 @@
 .flip-clock-meridium a { color: #313333; }
 
 .flip-clock-wrapper {
-    padding-left: 100px;
+  padding-left: 100px;
   text-align: center;
   position: relative;
   width: 100%;
@@ -158,8 +158,8 @@
   text-shadow: 0 1px 2px #000;
   text-align: center;
   background-color: #333;
-  border-radius: 6px;
-  font-size: 20px; }
+  border-radius: 4px;
+  font-size: 14px; }
 
 .flip-clock-wrapper ul li a div.up div.inn {
   top: 0; }

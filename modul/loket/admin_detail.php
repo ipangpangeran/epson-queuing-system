@@ -12,24 +12,24 @@ else{
     $control="modul/sys_menus/controller.php";
     ?>
 <div class="navbar">
-                            <div class="navbar-inner">
-                                            <div class="fileupload-buttonbar">
-                                                <ul class="nav">
-                                                    <li><a href="?link=menus"><i class="fontello-icon-th-list"></i>Detail Menus</a></li> 
-                                                    <li class="divider-vertical"></li>
-                                                </ul>
-                                                <!-- The fileinput-button span is used to style the file input field as button -->
-                                                <ul class="btn-toolbar pull-right">
-                                                    <li><a class="btn btn-blue " href="?link=menus&act=Add"> <i class="fontello-icon-plus-1"></i> 
-                                                            <span>Tambah </span>
-                                                        </a></li>
-                                                        <li><a class="btn btn-yellow " href="?link=menus&act=Edit&id=<?php echo "$r[menus_id]"?>"> <i class="fontello-icon-pencil-1"></i> 
-                                                            <span>Ubah </span>
-                                                        </a></li>
-                                                        <li><a class="btn btn-red" data-href="" data-toggle="modal" data-target="#confirm-delete"><i class="fontello-icon-trash-1"></i>
-                                                                <span>Hapus </span></a></li>
-                                                </ul>
-                                            </div>
+    <div class="navbar-inner">
+        <div class="fileupload-buttonbar">
+            <ul class="nav">
+            <li><a href="?link=menus"><i class="fontello-icon-th-list"></i>Detail Menus</a></li> 
+            <li class="divider-vertical"></li>
+            </ul>
+<!-- The fileinput-button span is used to style the file input field as button -->
+            <ul class="btn-toolbar pull-right">
+            <li><a class="btn btn-blue " href="?link=menus&act=Add"> <i class="fontello-icon-plus-1"></i> 
+            <span>Tambah </span>
+            </a></li>
+            <li><a class="btn btn-yellow " href="?link=menus&act=Edit&id=<?php echo "$r[menus_id]"?>"> <i class="fontello-icon-pencil-1"></i> 
+            <span>Ubah </span>
+            </a></li>
+            <li><a class="btn btn-red" data-href="" data-toggle="modal" data-target="#confirm-delete"><i class="fontello-icon-trash-1"></i>
+            <span>Hapus </span></a></li>
+            </ul>
+            </div>
                                             <!-- // Fileupload-buttonbar --> 
                                         </div>
                                     </div>
@@ -65,21 +65,21 @@ else{
                                                         <tr>
                                                             <td class="center"><?php echo "Created by"; ?></td>
                                                             <td class="center"><?php
-                                                                $created=mysql_query("SELECT nama_lengkap FROM users WHERE user_id='$r[created_by]'");
+                                                                $created=mysql_query("SELECT NAMA_LENGKAP FROM users WHERE USER_ID='$r[CREATED_BY]'");
                                                                 $w=mysql_fetch_array($created);       
-                                                                echo "$w[nama_lengkap]";
+                                                                echo "$w[NAMA_LENGKAP]";
                                                             ?></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="center"><?php echo "Created"; ?></td>
-                                                            <td class="center"><?php echo "$r[created]" ?></td>
+                                                            <td class="center"><?php echo "$r[CREATED]" ?></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="center"><?php echo "Modified By"; ?></td>
                                                             <td class="center">
-                                                                <?php $created=mysql_query("SELECT nama_lengkap FROM users WHERE user_id='$r[created_by]'");
+                                                                <?php $created=mysql_query("SELECT NAMA_LENGKAP FROM users WHERE USER_ID='$r[CREATED_BY]'");
                                                                 $w=mysql_fetch_array($created);       
-                                                                echo "$w[nama_lengkap]"; ?>
+                                                                echo "$w[NAMA_LENGKAP]"; ?>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -113,11 +113,11 @@ else{
         </div>
     </div>
 </div>
-                        <script>
-                            $('#modal').on('show', function() {
+<script>
+    $('#modal').on('show', function() {
     $('#confirm-delete').on('show.bs.modal', function(e) {
     $(this).find('.danger').attr('href', $(e.relatedTarget).data('href'));
 });
-                            </script>
-                            
+</script>
+                           
  <?php }?>                           

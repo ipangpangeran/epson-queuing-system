@@ -1,6 +1,4 @@
 <?php
-
-
 class validasi{
 	function __construct(){}
 	

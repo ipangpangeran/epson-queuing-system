@@ -41,7 +41,6 @@ else{
                                                                         echo "<option value=7 >7</option>";
                                                                         echo "<option value=8 >8</option>";
                                                                         echo "<option value=9 >9</option>";
-                                                                     
                                                                 ?>
                                                             </select>
                                                             <?php if ($r[aktif]!=0){?>

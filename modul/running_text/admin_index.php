@@ -12,11 +12,11 @@ switch($_GET[act]){
                             <div class="navbar">
                                         <div class="navbar-inner">
                                             <div class="fileupload-buttonbar">
-                                                <h4 class="title"><i class="fontello-icon-table"></i> Text Berjalan</h4>
+                                                <h4 class="title"><i class="fontello-icon-table"></i>Text Berjalan</h4>
                                                 <!-- The fileinput-button span is used to style the file input field as button -->
                                                 <ul class="btn-toolbar pull-right">
-                                                    <li><a href="?link=running-text&act=Add" class="btn btn-blue "> <i class="fontello-icon-plus-1"></i> 
-                                                            <span>Tambah </span>
+                                                    <li><a href="?link=running-text&act=Add" class="btn btn-blue"> <i class="fontello-icon-plus-1"></i> 
+                                                            <span>Tambah</span>
                                                         </a></li>
                                                 </ul>
                                             </div>
@@ -27,8 +27,10 @@ switch($_GET[act]){
                                 <table id="json" class="table table-striped table-content table-condensed boo-table table-hover">
                                     <thead>
                                         <tr>
+                                            <th class="no_mobile" scope="col">No <span class="column-sorter"></span></th>
                                             <th class="no_mobile" scope="col">ID <span class="column-sorter"></span></th>
                                             <th class="no_mobile" scope="col">ISI TEXT<span class="column-sorter"></span></th>
+
                                             <th class="alignright">Actions</th>
                                         </tr>
                                     </thead>
@@ -86,10 +88,10 @@ switch($_GET[act]){
                                 [0, 'asc']
                         ],
                         aoColumnDefs: [{
-                                "aTargets": [1],
+                                "aTargets": [0],
                                 'sClass': 'hidden-phone'
                         }, {
-                                "aTargets": [2],
+                                "aTargets": [3],
                                 "sName": "RoleId",
                                 "sDefaultContent": "",
                         "bSearchable": false,
@@ -97,7 +99,7 @@ switch($_GET[act]){
                         "fnRender": function (oObj)                              
                         {
                             // oObj.aData[0] returns the RoleId
-                            return "<a  class='btn btn-yellow' href='?link=running-text&act=Detail&id="+oObj.aData[0]+"'>Edit</a>  ";
+                            return "<a  class='btn btn-yellow' href='?link=running-text&act=Detail&id="+oObj.aData[1]+"'>Edit</a>  ";
                         }
                         }],
                         sDom: "<'row-fluid'<'widget-header' <'span6'<'table-header-title'>> <'span6'f>>>rtiS"

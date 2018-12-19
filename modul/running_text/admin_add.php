@@ -12,7 +12,7 @@ else{
 <div class="span12 grider">
 <div class="widget widget-simple">
                                 <div class="widget-header">
-                                    <h4><i class="fontello-icon-wrench-2"></i> Add Text Berjalan</h4>
+                                    <h4><i class="fontello-icon-doc-text"></i>Add Text Berjalan</h4>
                                 </div>
                                 <div class="widget-content">
                                     <div class="widget-body">

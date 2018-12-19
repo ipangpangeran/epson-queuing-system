@@ -1,9 +1,11 @@
 <?php
 
  // Bagian Home
-if ($_GET['link']=='home'){
- include "modul/home/home_admin.php"; 
-
+if ($_GET['link']=='home-admin'){
+    include "modul/home/home_admin.php"; 
+}
+elseif ($_GET['link']=='home-cs'){
+    include "modul/home/home_cs.php";
 }
 elseif ($_GET['link']=='menus'){
     include "modul/sys_menus/admin_index.php";
@@ -11,17 +13,11 @@ elseif ($_GET['link']=='menus'){
 elseif ($_GET['link']=='pengguna-akun'){
     include "modul/daftar_akun/admin_index.php";
 }
-elseif ($_GET['link']=='menu-antrian-transaksi'){
-    include "modul/menu_antrian/transaksi.php";
+elseif ($_GET['link']=='menu-antrian'){
+    include "modul/menu_antrian/menu_antrian.php";
 }
-elseif ($_GET['link']=='menu-antrian-administrasi'){
-    include "modul/menu_antrian/administrasi.php";
-}
-elseif ($_GET['link']=='daftar-customer-transaksi'){
-    include "modul/save_antrian/daftar_transaksi.php";
-}
-elseif ($_GET['link']=='daftar-customer-administrasi'){
-    include "modul/save_antrian/daftar_administrasi.php";
+elseif ($_GET['link']=='daftar-customer'){
+    include "modul/save_antrian/daftar_antrian.php";
 }
 elseif ($_GET['link']=='loket'){
     include "modul/loket/admin_index.php";
@@ -31,6 +27,12 @@ elseif ($_GET['link']=='video'){
 } 
 elseif ($_GET['link']=='running-text'){
     include "modul/running_text/admin_index.php";
+} 
+elseif ($_GET['link']=='produk'){
+    include "modul/produk/admin_index.php";
+}
+elseif ($_GET['link']=='sales-save-xls'){
+    include "modul/save_antrian/sales_save_xls.php";
 } 
 //---------------------------------------------------------------------------------------------
 

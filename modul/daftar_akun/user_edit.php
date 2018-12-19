@@ -14,7 +14,7 @@ session_start();
 <div class='row-fluid sortable'>
 				<div class='box span12'>
 					<div class='box-header well' data-original-title>
-						<h2><i class='icon-edit'></i> Edit Akun</h2>
+						<h2><i class='icon-edit'></i>Edit Akun</h2>
 						<div class='box-icon'>
 							<a href='?link=pengguna-akun' class='btn btn-round' title="Daftar" data-rel="tooltip"><i class='icon-th'></i></a>
 							

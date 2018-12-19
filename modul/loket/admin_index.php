@@ -9,11 +9,9 @@ switch($_GET[act]){
 <section>
                     <div class="row-fluid">
                         <div class="span12">
-                            
                             <div class="widget widget-simple widget-table">
                                 <table id="table" class="table table-striped table-content table-condensed boo-table table-hover">
                                     <thead>
-                                       
                                         <tr>
                                             <th class="no_mobile" scope="col">ID <span class="column-sorter"></span></th>
                                             <th class="no_mobile" scope="col">Nama Loket <span class="column-sorter"></span></th>

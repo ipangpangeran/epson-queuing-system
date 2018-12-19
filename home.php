@@ -5,14 +5,10 @@ error_reporting(0);
 include('headerHome.php'); ?>
 
  <div id="main-container">
-        
+       
        <?php  include "root/content_home.php"; ?>
         
-    </div>
+ </div>
     <!-- // main-container  --> 
-    
-</div>
-<!-- // page-container --> 
-
 
 <?php include('footer.php'); ?>

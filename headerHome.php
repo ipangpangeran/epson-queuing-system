@@ -6,9 +6,8 @@
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html>
 <!--<![endif]-->
-
 <head>
-    <?php include('element/css.php'); ?>
+<?php include('element/css.php'); ?>
 </head>
 
 <body class="signin signin-vertical">
@@ -19,16 +18,14 @@
             <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="navbar navbar-inverse navbar-fixed-top">
                 <div class="navbar-inner">
-                    
                     <div class="container-fluid">
                         <div class="nav-collapse collapse">
                             <?php include('element/menus_home.php'); ?>
-                        
-                    </div>
+                        </div>
+
                         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                        <a class="brand" href="?link=home">Aplikasi Antrian Bank Ini</a>
-                        <div class="nav-collapse collapse">
-                            
+                        <a style="margin: 4pt 0pt 0pt 0pt;" class="brand" href="?link=home">EPSON SALES & SERVICE (ESS)</a>
+                        <div class="nav-collapse collapse">   
                         </div>
                     </div>
                 </div>
@@ -37,21 +34,21 @@
             <?php } ?>
             <?php if(!isset($no_visible_elements) || !$no_visible_elements) { ?>
              <div class="header-drawer">
-                <div class="mobile-nav text-center visible-phone"> <a href="javascript:void(0);" class="mobile-btn" data-toggle="collapse" data-target=".sidebar"><i class="aweso-icon-chevron-down"></i> Sistem Informasi Antrian</a> </div>
+                <div class="mobile-nav text-center visible-phone"> <a href="javascript:void(0);" class="mobile-btn" data-toggle="collapse" data-target=".sidebar"><i class="aweso-icon-chevron-down"></i>Queueing System</a> </div>
                 <!-- // Resposive navigation -->
                 <div class="breadcrumbs-nav hidden-phone">
                     <ul id="breadcrumbs" class="breadcrumb">
-                        <li><a href="javascript:void(0);"><i class="fontello-icon-home f12"></i> Welcome </a> <span class="divider">/</span></li>
-                        <li class="active">Sistem Informasi Antrian </li>
+                        <li class="active">Queueing System</li>
                     </ul>
                     
                 </div>
                 <!-- // breadcrumbs --> 
-            </div>
+             </div>
             <!-- // drawer --> 
+            </div>
         </div>
     </div>
-        </div>
+</div>
     <!-- // header-container -->
      <?php } ?>
     <!-- // header-container -->

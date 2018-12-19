@@ -12,11 +12,7 @@ if (!ctype_alnum($username) OR !ctype_alnum($pass)){
   echo header("location:../index.php");
 }
 else{
-$login=mysql_query("SELECT * FROM users, level WHERE
-                    users.level_id=level.level_id
-                    AND USERNAME='$username' AND PASSWORD='$pass'                     
-                    AND blokir='N'
-                    ");
+$login=mysql_query("SELECT * FROM users, level WHERE users.LEVEL_ID=level.LEVEL_ID AND USERNAME='$username' AND PASSWORD='$pass' AND blokir='N'");
 $ketemu=mysql_num_rows($login);
 $r=mysql_fetch_array($login);
 
@@ -29,7 +25,6 @@ if ($ketemu > 0){
   $_SESSION[namalengkap]  = $r[NAMA_LENGKAP];
   $_SESSION[passuser]     = $r[PASSWORD];
   $_SESSION[user_id]     = $r[USER_ID];
-  $_SESSION[leveluser]    = $r[NAME];
   $_SESSION[session_id]    = $r[session_id];
   
   // session timeout

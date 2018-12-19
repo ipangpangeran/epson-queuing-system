@@ -5,6 +5,7 @@ session_start();
 }
 else{
 include "../../config/database.php";
+include "../../config/fungsi_zona.php";
 
 $link=$_GET['link'];
 $act=$_GET['act'];
@@ -12,8 +13,7 @@ $today = date("Y-m-d");
 // Input
 if ($link=='running-text' AND $act=='input'){   
 
-  mysql_query("INSERT INTO running_text( isi_text ) 
-                           VALUES('  $_POST[isi_text]  |')");
+  mysql_query("INSERT INTO running_text VALUES('', ' $_POST[isi_text]  ●', '$_SESSION[user_id]', '$wib')");
   echo "<script>
                 window.alert('Data Berhasil Ditambah');
                 window.location='../../system.php?link=running-text'
@@ -32,7 +32,7 @@ elseif ($link=='running-text' AND $act=='delete'){
 // Update 
 elseif ($link=='running-text' AND $act=='update'){
   mysql_query("UPDATE running_text
-                            SET isi_text='  $_POST[isi_text] |'
+                            SET isi_text='  $_POST[isi_text]  ●', created_by='$_SESSION[user_id]', created='$wib'
                             WHERE id = '$_POST[id]'");
   echo "<script>
                 window.alert('Data Berhasil Diubah');

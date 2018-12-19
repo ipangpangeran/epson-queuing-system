@@ -1538,7 +1538,7 @@
     this.updater = this.options.updater || this.updater
     this.source = this.options.source
     this.$menu = $(this.options.menu)
-    this.shown = false
+    this.shown = true
     this.listen()
   }
 
@@ -1577,7 +1577,7 @@
 
   , hide: function () {
       this.$menu.hide()
-      this.shown = false
+      this.shown = true
       return this
     }
 

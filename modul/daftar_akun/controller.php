@@ -5,18 +5,20 @@ error_reporting(0);
   echo header("location:../../home.php?link=home");
 }
 else{
+
 include "../../config/database.php";
 include "../../config/fungsi_zona.php";
 include "../../config/fungsi_thumb.php";
 
 $link=$_GET['link'];
 $act=$_GET['act'];
-$today = gmdate("Y-m-d H:i:s", time()+60*60*8);
+
 $lokasi_file    = $_FILES['fupload']['tmp_name'];
-  $tipe_file      = $_FILES['fupload']['type'];
-  $nama_file      = $_FILES['fupload']['name'];
-  $acak           = rand(1,99);
-  $nama_file_unik = $acak.$nama_file; 
+$tipe_file      = $_FILES['fupload']['type'];
+$nama_file      = $_FILES['fupload']['name'];
+$acak           = rand(1,99);
+$nama_file_unik = $acak.$nama_file; 
+
 // Input
 if ($link=='pengguna-akun' AND $act=='input'){   
 
@@ -31,33 +33,27 @@ if ($link=='pengguna-akun' AND $act=='input'){
   UploadAkun($nama_file_unik);
   $pass =  sha1($_POST['PASSWORD']);
   mysql_query("INSERT INTO users(
-                                                    USERNAME,
-                                                    PASSWORD,
-                                                    NIP,
-                                                    NAMA_LENGKAP,
-                                                    JENIS_KELAMIN_ID,
-                                                    TEMPAT_LAHIR,
-                                                    TGL_LAHIR,
-                                                    FOTO,
-                                                    ALAMAT,
-                                                    TELPON,
-                                                    LEVEL_ID,
-                                                    BLOKIR,
-                                                    CREATED,
-                                                    CREATED_BY) 
+                                    USERNAME,
+                                    PASSWORD,
+                                    NIP,
+                                    NAMA_LENGKAP,
+                                    FOTO,
+                                    TELPON,
+                                    LEVEL_ID,
+                                    LOKET,
+                                    BLOKIR,
+                                    CREATED,
+                                    CREATED_BY) 
                            VALUES('$_POST[USERNAME]',
                                    '$pass',
                                    '$_POST[NIP]',
                                    '$_POST[NAMA_LENGKAP]',
-                                   '$_POST[JENIS_KELAMIN_ID]',
-                                   '$_POST[TEMPAT_LAHIR]',
-                                   '$_POST[TGL_LAHIR]',
                                    '$nama_file_unik',
-                                   '$_POST[ALAMAT]',
                                    '$_POST[TELPON]',
                                    '$_POST[LEVEL_ID]',
+                                   '$_POST[LOKET]',
                                    '$_POST[BLOKIR]',
-                                   '$wita',
+                                   '$wib',
                                    '$_SESSION[user_id]')");
   $detail = mysql_query("SELECT * FROM 
                             users
@@ -81,7 +77,7 @@ elseif ($link=='pengguna-akun' AND $act=='delete'){
      $r    = mysql_fetch_array($detail);
         unlink("../../webroot/foto_akun/$r[FOTO]");   
         unlink("../../webroot/foto_akun/small_$r[FOTO]");   
-        unlink("../../webroot/foto_akun/medium_$r[FOTO]");   
+        unlink("../../webroot/foto_akun/medium_$r[FOTO]");
   mysql_query("DELETE FROM users WHERE USER_ID='$_GET[id]'");
   
   echo "<script>
@@ -94,18 +90,15 @@ elseif ($link=='pengguna-akun' AND $act=='delete'){
 elseif ($link=='pengguna-akun' AND $act=='update'){
   if (empty($_POST['PASSWORD_BARU']) AND empty($lokasi_file)) {
       UploadAkun($nama_file_unik);
-    mysql_query("UPDATE users SET 
+    mysql_query("UPDATE users SET USERNAME = '$_POST[USERNAME]',
                                   NIP = '$_POST[NIP]',
                                   NAMA_LENGKAP= '$_POST[NAMA_LENGKAP]',
-                                  JENIS_KELAMIN_ID = '$_POST[JENIS_KELAMIN_ID]',
-                                  TEMPAT_LAHIR = '$_POST[TEMPAT_LAHIR]',
-                                  TGL_LAHIR = '$_POST[TGL_LAHIR]',
-                                  ALAMAT = '$_POST[ALAMAT]',
                                   TELPON = '$_POST[TELPON]',
                                   LEVEL_ID = '$_POST[LEVEL_ID]',
+                                  /*LOKET = '$_POST[LOKET]',*/
                                   BLOKIR = '$_POST[BLOKIR]',
-                                  MODIFIED='$today',
-                                MODIFIED_BY='$_SESSION[user_id]'
+                                  CREATED='$wib',
+                                  CREATED_BY='$_SESSION[user_id]'
                                 WHERE  USER_ID='$_POST[id]'");
     echo "<script>
                 window.alert('Data Diubah');
@@ -121,19 +114,16 @@ elseif ($link=='pengguna-akun' AND $act=='update'){
                             WHERE 
                             USER_ID='$_GET[id]'");
      $r    = mysql_fetch_array($detail);
-    mysql_query("UPDATE users SET PASSWORD        = '$pass',
+    mysql_query("UPDATE users SET PASSWORD = '$pass',
+                                  USERNAME = '$_POST[USERNAME]',
                                   NIP = '$_POST[NIP]',
                                   NAMA_LENGKAP= '$_POST[NAMA_LENGKAP]',
-                                  JENIS_KELAMIN_ID = '$_POST[JENIS_KELAMIN_ID]',
-                                  TEMPAT_LAHIR = '$_POST[TEMPAT_LAHIR]',
-                                  TGL_LAHIR = '$_POST[TGL_LAHIR]',
-                                  
-                                  ALAMAT = '$_POST[ALAMAT]',
                                   TELPON = '$_POST[TELPON]',
                                   LEVEL_ID = '$_POST[LEVEL_ID]',
+                                  LOKET = '$_POST[LOKET]',
                                   BLOKIR = '$_POST[BLOKIR]',
-                                  MODIFIED='$today',
-                                MODIFIED_BY='$_SESSION[user_id]'
+                                  CREATED='$wib',
+                                  CREATED_BY='$_SESSION[user_id]'
                            WHERE USER_ID='$_POST[id]'");
   echo "<script>
                 window.alert('Password dan Data Diubah');
@@ -148,19 +138,16 @@ elseif ($link=='pengguna-akun' AND $act=='update'){
                             WHERE 
                             USER_ID='$_GET[id]'");
      $r    = mysql_fetch_array($detail);
-    mysql_query("UPDATE users SET 
+    mysql_query("UPDATE users SET USERNAME = '$_POST[USERNAME]',
                                   NIP = '$_POST[NIP]',
                                   NAMA_LENGKAP= '$_POST[NAMA_LENGKAP]',
-                                  JENIS_KELAMIN_ID = '$_POST[JENIS_KELAMIN_ID]',
-                                  TEMPAT_LAHIR = '$_POST[TEMPAT_LAHIR]',
-                                  TGL_LAHIR = '$_POST[TGL_LAHIR]',
                                   FOTO = '$nama_file_unik',
-                                  ALAMAT = '$_POST[ALAMAT]',
                                   TELPON = '$_POST[TELPON]',
                                   LEVEL_ID = '$_POST[LEVEL_ID]',
+                                  LOKET = '$_POST[LOKET]',
                                   BLOKIR = '$_POST[BLOKIR]',
-                                  MODIFIED='$today',
-                                MODIFIED_BY='$_SESSION[user_id]'
+                                  CREATED='$wib',
+                                  CREATED_BY='$_SESSION[user_id]'
                            WHERE USER_ID='$_POST[id]'");
   echo "<script>
                 window.alert('Foto dan Data Diubah');
@@ -176,18 +163,16 @@ elseif ($link=='pengguna-akun' AND $act=='update'){
                             USER_ID='$_GET[id]'");
      $r    = mysql_fetch_array($detail);
     mysql_query("UPDATE users SET PASSWORD        = '$pass',
+                                  USERNAME = '$_POST[USERNAME]',
                                   NIP = '$_POST[NIP]',
                                   NAMA_LENGKAP= '$_POST[NAMA_LENGKAP]',
-                                  JENIS_KELAMIN_ID = '$_POST[JENIS_KELAMIN_ID]',
-                                  TEMPAT_LAHIR = '$_POST[TEMPAT_LAHIR]',
-                                  TGL_LAHIR = '$_POST[TGL_LAHIR]',
                                   FOTO = '$nama_file_unik',
-                                  ALAMAT = '$_POST[ALAMAT]',
                                   TELPON = '$_POST[TELPON]',
                                   LEVEL_ID = '$_POST[LEVEL_ID]',
+                                  LOKET = '$_POST[LOKET]',
                                   BLOKIR = '$_POST[BLOKIR]',
-                                  MODIFIED='$today',
-                                MODIFIED_BY='$_SESSION[user_id]'
+                                  CREATED='$wib',
+                                  CREATED_BY='$_SESSION[user_id]'
                            WHERE USER_ID='$_POST[id]'");
   echo "<script>
                 window.alert('Password, Foto dan Data Diubah');
@@ -200,16 +185,12 @@ elseif ($link=='pengguna-akun' AND $act=='update'){
 elseif ($link=='pengguna-akun' AND $act=='updateuser'){
   if (empty($_POST['PASSWORD_BARU']) AND empty($lokasi_file)) {
       UploadAkun($nama_file_unik);
-    mysql_query("UPDATE users SET 
+    mysql_query("UPDATE users SET USERNAME = '$_POST[USERNAME]',
                                   NIP = '$_POST[NIP]',
                                   NAMA_LENGKAP= '$_POST[NAMA_LENGKAP]',
-                                  JENIS_KELAMIN_ID = '$_POST[JENIS_KELAMIN_ID]',
-                                  TEMPAT_LAHIR = '$_POST[TEMPAT_LAHIR]',
-                                  TGL_LAHIR = '$_POST[TGL_LAHIR]',
-                                  ALAMAT = '$_POST[ALAMAT]',
                                   TELPON = '$_POST[TELPON]',
-                                  MODIFIED='$today',
-                                MODIFIED_BY='$_SESSION[user_id]'
+                                  CREATED='$wib',
+                                  CREATED_BY='$_SESSION[user_id]'
                                 WHERE  USER_ID='$_POST[id]'");
     echo "<script>
                 window.alert('Data Diubah');
@@ -228,14 +209,9 @@ elseif ($link=='pengguna-akun' AND $act=='updateuser'){
     mysql_query("UPDATE users SET PASSWORD        = '$pass',
                                   NIP = '$_POST[NIP]',
                                   NAMA_LENGKAP= '$_POST[NAMA_LENGKAP]',
-                                  JENIS_KELAMIN_ID = '$_POST[JENIS_KELAMIN_ID]',
-                                  TEMPAT_LAHIR = '$_POST[TEMPAT_LAHIR]',
-                                  TGL_LAHIR = '$_POST[TGL_LAHIR]',
-                                  
-                                  ALAMAT = '$_POST[ALAMAT]',
                                   TELPON = '$_POST[TELPON]',
-                                  MODIFIED='$today',
-                                MODIFIED_BY='$_SESSION[user_id]'
+                                  CREATED='$wib',
+                                  CREATED_BY='$_SESSION[user_id]'
                            WHERE USER_ID='$_POST[id]'");
   echo "<script>
                 window.alert('Password dan Data Diubah');
@@ -253,14 +229,10 @@ elseif ($link=='pengguna-akun' AND $act=='updateuser'){
     mysql_query("UPDATE users SET 
                                   NIP = '$_POST[NIP]',
                                   NAMA_LENGKAP= '$_POST[NAMA_LENGKAP]',
-                                  JENIS_KELAMIN_ID = '$_POST[JENIS_KELAMIN_ID]',
-                                  TEMPAT_LAHIR = '$_POST[TEMPAT_LAHIR]',
-                                  TGL_LAHIR = '$_POST[TGL_LAHIR]',
                                   FOTO = '$nama_file_unik',
-                                  ALAMAT = '$_POST[ALAMAT]',
                                   TELPON = '$_POST[TELPON]',
-                                  MODIFIED='$today',
-                                MODIFIED_BY='$_SESSION[user_id]'
+                                   CREATED='$wib',
+                                  CREATED_BY='$_SESSION[user_id]'
                            WHERE USER_ID='$_POST[id]'");
   echo "<script>
                 window.alert('Foto dan Data Diubah');
@@ -278,14 +250,10 @@ elseif ($link=='pengguna-akun' AND $act=='updateuser'){
     mysql_query("UPDATE users SET PASSWORD        = '$pass',
                                   NIP = '$_POST[NIP]',
                                   NAMA_LENGKAP= '$_POST[NAMA_LENGKAP]',
-                                  JENIS_KELAMIN_ID = '$_POST[JENIS_KELAMIN_ID]',
-                                  TEMPAT_LAHIR = '$_POST[TEMPAT_LAHIR]',
-                                  TGL_LAHIR = '$_POST[TGL_LAHIR]',
                                   FOTO = '$nama_file_unik',
-                                  ALAMAT = '$_POST[ALAMAT]',
                                   TELPON = '$_POST[TELPON]',
-                                  MODIFIED='$today',
-                                MODIFIED_BY='$_SESSION[user_id]'
+                                  CREATED='$wib',
+                                  CREATED_BY='$_SESSION[user_id]'
                            WHERE USER_ID='$_POST[id]'");
   echo "<script>
                 window.alert('Password, Foto dan Data Diubah');

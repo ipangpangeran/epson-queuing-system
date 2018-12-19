@@ -2474,8 +2474,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', en
 
 .well-black {
   color: #eeeeee;
-  background: #373b3e;
-  border-color: #3e4144;
+  background: rgba(235, 250, 254, 0.54);
 }
 
 .well-wrapp {
@@ -2558,8 +2557,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', en
 }
 
 .well-black .well-black {
-  border-color: #2e3134;
-  background-color: #323538;
+  border-color: #90919a;
+  background-color: rgba(253, 253, 253, 0.44);
   box-shadow: none;
 }
 
@@ -3903,7 +3902,7 @@ ul.toolbar-inline > li {
 }
 
 .navbar .brand {
-  padding: 5px 20px;
+  padding: 3.5px 45px;
 }
 
 .navbar-inner .title {
@@ -4038,7 +4037,7 @@ ul.toolbar-inline > li {
 }
 
 .navbar-inverse .navbar-inner {
-  background: #272C2F;
+  background: #FFFFFF;
 }
 
 .navbar-inverse .brand,
@@ -5543,8 +5542,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2d3032', e
   position: fixed;
   top: 76px;
   width: 500px;
-  background: url("../img/background/body-bg-02-15.jpg") repeat scroll 0 0 #c5c6ca;
-  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .base-layout .sidebar {
@@ -5557,11 +5554,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2d3032', e
 }
 
 .sidebar-left .sidebar {
-  border-right: 1px solid #272B2E;
-  -webkit-box-shadow: -5px 0 15px -5px rgba(0, 0, 0, 0.15) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.2) inset;
-  -moz-box-shadow: -5px 0 15px -5px rgba(0, 0, 0, 0.15) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.2) inset;
-  -o-box-shadow: -5px 0 15px -5px rgba(0, 0, 0, 0.15) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.2) inset;
-  box-shadow: -5px 0 15px -5px rgba(0, 0, 0, 0.15) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.2) inset;
 }
 
 .sidebar-right .sidebar {
@@ -5578,22 +5570,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2d3032', e
 }
 
 .sidebar-inverse {
-  background-color: #272B2E;
-  background-image: none;
+
 }
 
 .sidebar-left .sidebar-inverse {
-  -webkit-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 1) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.5) inset;
-  -moz-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 1) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.5) inset;
-  -o-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 1) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.5) inset;
-  box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 1) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.5) inset;
 }
 
 .sidebar-right .sidebar-inverse {
-  -webkit-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 1) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.5) inset;
-  -moz-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 1) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.5) inset;
-  -o-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 1) inset, -2px 0 10px -2px rgba(0, 0, 0, 0.5) inset;
-  box-shadow: 5px 0 20px -5px rgba(0, 0, 0, 1) inset, 2px 0 10px -2px rgba(0, 0, 0, 0.5) inset;
 }
 
 .sidebar-item .profile {
@@ -7332,7 +7315,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff5b5b', e
 
 .well-black .section-title,
 .statistic-box.well-black .section-title {
-  border-bottom: 1px solid #222;
 }
 
 .statistic-box .section-content {

@@ -118,7 +118,4 @@ function combodetik($awal, $akhir,  $terpilih){
   echo "</select> ";
 }
 
-
-
-
 ?>

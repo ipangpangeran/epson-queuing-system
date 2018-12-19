@@ -361,20 +361,19 @@
 /* btn black 
  --------------------------- */
 .btn-black {
-	color: #ffffff;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.45);
-	background-color: #262626;
- 	*background-color: #141414;
-	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#797979), to(#141414));
-	background-image: -webkit-linear-gradient(top, #797979, #141414);
-	background-image: -o-linear-gradient(top, #797979, #141414);
-	background-image: linear-gradient(to bottom, #797979, #141414);
-	background-image: -moz-linear-gradient(top, #797979, #141414);
-	background-repeat: repeat-x;
-	border-color: #141414 #141414 #111111;
-	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.5);
- 	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff797979', endColorstr='#ff141414', GradientType=0);
- 	filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.45);
+  background-color: #A26C5A;
+  *background-color: #ffffff;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
+  background-image: -o-linear-gradient(top, #ffffff, #ffffff);
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+  background-image: -moz-linear-gradient(top, #ffffff, #ffffff);
+  background-repeat: repeat-x;
+  
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffffffff', GradientType=0);
+  filter: progid:dximagetransform.microsoft.gradient(enabled=false);
 }
 
 .btn-black:hover,
@@ -382,14 +381,14 @@
 .btn-black.active,
 .btn-black.disabled,
 .btn-black[disabled] {
-	color: #ffffff;
-	background: #141414;
- 	*background: #252628;
+  color: #ffffff;
+  background: #D6A19B;
+  *background: #252628;
 }
 
 .btn-black:active,
 .btn-black.active {
-	background: #141414 \9;
+  background: #ffffff \9;
 }
 
 /* btn navi 
@@ -639,11 +638,11 @@
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.35);
   background-color: #6da44c;
   *background-color: #528036;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#7bac5c), to(#528036));
-  background-image: -webkit-linear-gradient(top, #7bac5c, #528036);
-  background-image:    -moz-linear-gradient(top, #7bac5c, #528036);
-  background-image:      -o-linear-gradient(top, #7bac5c, #528036);
-  background-image:   linear-gradient(to bottom, #7bac5c, #528036);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5c76b2), to(#26272b));
+  background-image: -webkit-linear-gradient(top, #5c76b2, #26272b);
+  background-image:    -moz-linear-gradient(top, #5c76b2, #26272b);
+  background-image:      -o-linear-gradient(top, #5c76b2, #26272b);
+  background-image:   linear-gradient(to bottom, #5c76b2, #26272b);
   background-repeat: repeat-x;
   border-color: #528036 #528036 #4b7632;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.45);
@@ -663,7 +662,7 @@
 
 .btn-envato:active,
 .btn-envato.active {
-  background: #528036 \9;
+  background: #547cb8 \9;
 }
 
 /* btn facebook 
